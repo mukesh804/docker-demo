@@ -1,10 +1,10 @@
 FROM centos:7
 RUN yum install httpd \
     unzip -y
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page278/careo.zip  /var/www/html
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page271/cosmix.zip  /var/www/html
 WORKDIR /var/www/html
-RUN unzip careo.zip
-RUN cp -rvf careo/* .
-RUN rm -rf careo.zip careo
+RUN unzip cosmix.zip
+RUN cp -rvf cosmix/* .
+RUN rm -rf cosmix.zip cosmix
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
