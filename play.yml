@@ -1,0 +1,22 @@
+---
+- name: playbook
+  hosts: all
+  tasks:
+    - name: delete available docker container
+      docker_container:
+        name: web-container
+        state: absent
+
+    - name: remove available image
+      docker_image:
+          name: mm804/proj
+          state: absent
+          tag: latest
+
+    - name: create container
+      docker_container:
+        name: web-container
+        state: started
+        image: mm804/proj
+        ports:
+          - "9001:80"
